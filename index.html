@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #verification-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+
+        #error {
+            margin-top: 20px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="verification-form">
+        <h2>Human Verification</h2>
+        <p>Solve the following math problem:</p>
+
+        <label for="answer">What is 2 + 2?</label>
+        <input type="text" id="answer" placeholder="Your answer">
+
+        <button onclick="checkAnswer()">Submit</button>
+
+        <div id="result"></div>
+        <div id="error"></div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answer').value;
+            var correctAnswer = 4;
+
+            if (userAnswer == correctAnswer) {
+                document.getElementById('result').innerText = 'Verification successful! You are a human.';
+                document.getElementById('error').innerText = '';
+                alert("Verification successful! You are a human!!");
+                window.location.href = 'calsi.html';
+            } else {
+                document.getElementById('result').innerText = '';
+                document.getElementById('error').innerText = 'Incorrect answer. Please try again.';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
